@@ -30,6 +30,7 @@ CO2.solvelink = %solvelink%; # Solving optios
                              # i.e., < 3 > means solving in an async grid
                              # GAMS will generate model, submit to solver and then
                              # proceed in parallel without waiting for the solution.
+display max_solution_change
 
 
 ** SUBMISSION LOOP
@@ -44,6 +45,7 @@ loop(clt$(cltsolve(clt)), # only active coalitions
     h(clt) = CO2.handle;  # Model-attribute <handle> contains an unique identification for each submitted
                         # solution. The handle values stored in h(c) are then used to collect
                         # solutions once processes are completed.
+    display viter
 );
 
 

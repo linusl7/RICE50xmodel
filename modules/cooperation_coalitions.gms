@@ -111,12 +111,20 @@ ukr.ukr
 usa.usa
 vnm.vnm
 zaf.zaf
-# European Union
-eu27.(aut, bel, bgr, cro, dnk, esp, fin, fra, grc, hun, irl, ita, nld, pol, prt, rcz, rfa, rom, rsl, slo, swe, blt)
+# European Union + ukr + sui + nor
+eu27.(aut, bel, bgr, cro, dnk, esp, fin, fra, grc, hun, irl, ita, nld, pol, prt, rcz, rfa, rom, rsl, slo, swe, blt, ukr, sui, nor)
 # Non-EU27
-noneu27.(gbr, arg, aus, bra, can, chl, chn, cor, egy, golf57, idn, jpn, meme, mex, mys, nde, noan, noap, nor, osea, rcam, ris, rjan57, rsaf, rsam, rsas, rus, sui, tha, tur, ukr, usa, vnm, zaf, oeu)
+noneu27.(gbr, arg, aus, bra, can, chl, chn, cor, egy, golf57, idn, jpn, meme, mex, mys, nde, noan, noap, osea, rcam, ris, rjan57, rsaf, rsam, rsas, rus, tha, tur, usa, vnm, zaf, oeu)
 # Grand coalitions (all)
 grand.(aut, bel, bgr, cro, dnk, esp, fin, fra, grc, hun, irl, ita, nld, pol, prt, rcz, rfa, rom, rsl, slo, swe, blt, gbr, arg, aus, bra, can, chl, chn, cor, egy, golf57, idn, jpn, meme, mex, mys, nde, noan, noap, nor, osea, rcam, ris, rjan57, rsaf, rsam, rsas, rus, sui, tha, tur, ukr, usa, vnm, zaf, oeu)
+# Brics
+coal_b.(bra, rus, idn, chn, zaf)
+# Anglo
+coal_c.(usa, gbr, can, aus)
+# Asean
+coal_d.(tha, jpn, rsaf, rsam)
+# Remains
+coal_e.(arg, chl, cor, egy, golf57, meme, mex, mys, noan, noap, nde, osea, rcam, ris, rjan57, rsas, tur, vnm, oeu)
 $elseif.regionselected %n%=="witch17"
 # Single-region coalition
 brazil.brazil
@@ -157,7 +165,12 @@ cltsolve(clt) = no;
 
 cltsolve('eu27') = yes;
 cltsolve('noneu27') = yes;
-$endif.srm
+*cltsolve('eu27') = yes;
+*cltsolve('coal_b') = yes;
+*cltsolve('coal_c') = yes;
+*cltsolve('coal_d') = yes;
+*cltsolve('coal_e') = yes;
+*$endif.srm
 # MACRO mapping between coalitions and belonging regions (probaby now obsolete due to changes in solver)
 $macro mapclt(n)    map_clt_n(&clt,n)
 $macro mapcclt(nn)  map_clt_n(&clt,nn)

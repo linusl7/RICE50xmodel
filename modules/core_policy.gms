@@ -49,7 +49,7 @@ $elseif.pol '%policy%'=='cba'
 
 $elseif.pol '%policy%'=='cea_tatm'
 * limit GMT to %tatm_limit% degrees above preindustrial
-$setglobal tatm_limit 2
+$setglobal tatm_limit 2.5
 * Enable/disable overshoot option
 $setglobal overshoot "yes"
 $setglobal damages_postprocessed

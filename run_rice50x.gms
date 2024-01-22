@@ -29,15 +29,15 @@ $setglobal baseline 'ssp2'
 
 * POLICY
 * | bau | bau_impact | cba | cbudget | cbudget_regional | ctax | simulation | simulation_tatm_exogen | simulation_climate_regional_exogen |
-$setglobal policy 'bau'
+$setglobal policy 'cea_tatm'
 
 * COOPERATION
 * | coop | noncoop | coalitions
-$setglobal cooperation 'noncoop'
+$setglobal cooperation 'coop'
 
 * IMPACT SPECIFICATION
 * | off | dice | burke | dell | kalkuhl | howard | climcost | coacch |
-$setglobal impact 'kalkuhl'
+$setglobal impact 'dice'
 
 * CLIMATE MODULE
 * | dice2016 | cbsimple | witchco2 | witchoghg |
@@ -48,7 +48,7 @@ $setglobal climate 'witchco2'
 $setglobal savings 'fixed'
 
 * DEFAULT RESULTS FILENAME if nameout is not set
-$setglobal nameout "%baseline%_%policy%"
+$setglobal nameout "%baseline%_%policy%_%cooperation%_%impact%"
 
 
 *=========================================================================
